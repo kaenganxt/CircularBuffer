@@ -6,6 +6,15 @@
  * 
  * Elements can be added suing the `push` method and removed using `pop`.
  * When the buffer is full, a new element discards the first element.
+ *
+ * The buffer is implemented using a heap-allocated data array and different indices:
+ * - `start` identifies the position of the first element.
+ * - `next` identifies the next free position, or the value to overwrite if the buffer is full.
+ * - `size` is the current size of the buffer.
+ *    It is necessary to be able to decide between the buffer being empty or full when `start` is equal to `next`.
+ * - `capacity` holds the size of the underlying array and represents the maximum size of the buffer.
+ * 
+ * Thread safety is ensured through the use of a Mutex.
  */
 template<typename T>
 class CircularBuffer {
