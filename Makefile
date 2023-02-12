@@ -10,7 +10,7 @@ OBJS=$(subst .cpp,.o,$(SRCS))
 all: $(BIN)
 
 $(BIN): $(OBJS)
-	$(CXX) -O2 -o $(BIN) $(OBJS)
+	$(CXX) -O2 -lpthread -o $(BIN) $(OBJS)
 
 src/test.o: src/circularbuffer.h src/circularbuffer.inl
 

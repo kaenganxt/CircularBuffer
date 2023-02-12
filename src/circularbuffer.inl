@@ -1,5 +1,3 @@
-#include <iostream>
-
 template<typename T>
 CircularBuffer<T>& CircularBuffer<T>::operator=(CircularBuffer<T>& other) {
     if (this != &other) {
