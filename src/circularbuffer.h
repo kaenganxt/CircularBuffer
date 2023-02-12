@@ -39,7 +39,7 @@ public:
     /**
      * Assignment operator to perform a deep copy of the buffer.
      */
-    CircularBuffer<T>& operator=(const CircularBuffer<T>& other);
+    CircularBuffer<T>& operator=(CircularBuffer<T>& other);
 
     /**
      * Add a new element to the end of the buffer.
@@ -65,4 +65,4 @@ public:
     int count() const;
 };
 
-#include "circularbuffer.hpp"
+#include "circularbuffer.inl"

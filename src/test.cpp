@@ -19,11 +19,14 @@ int main() {
     CircularBuffer<int> copy = buffer;
     copy.push(42);
 
-    std::cout << "Size: " << buffer.count() << "; Copy size: " << copy.count() << std::endl;
+    CircularBuffer<int> copy2(2);
+    copy2 = copy;
+    copy2.push(24);
+    std::cout << "Size: " << buffer.count() << "; Copy size: " << copy.count() << "; Copy2 size: " << copy2.count() << std::endl;
 
     while (true) {
         try {
-            copy.pop();
+            copy2.pop();
             std::cout << "pop" << std::endl;
         } catch (std::out_of_range) {
             break;

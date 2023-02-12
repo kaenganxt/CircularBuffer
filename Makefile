@@ -12,7 +12,7 @@ all: $(BIN)
 $(BIN): $(OBJS)
 	$(CXX) -O2 -o $(BIN) $(OBJS)
 
-src/test.o: src/circularbuffer.h src/circularbuffer.hpp
+src/test.o: src/circularbuffer.h src/circularbuffer.inl
 
 clean:
 	$(RM) $(OBJS)
